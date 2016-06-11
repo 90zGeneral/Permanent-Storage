@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         
         NSUserDefaults.standardUserDefaults().setObject("Roy", forKey: "name")
         
+        //By default, the data is stored as an 'anyObject' type, so use keyword 'as' with unwrapping to convert data into the data type that you want
         let userName = NSUserDefaults.standardUserDefaults().objectForKey("name")! as! String
         
         print(userName)
@@ -27,7 +28,11 @@ class ViewController: UIViewController {
         let newArray = NSUserDefaults.standardUserDefaults().objectForKey("array")! as! NSArray
         
         for x in newArray {
-            print(x)
+            if x as! Int > 10 {
+                print(userName)
+            }else {
+                print(x)
+            }
         }
         
     }
